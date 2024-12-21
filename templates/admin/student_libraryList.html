@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>student Library List</title>
+
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'dashboard\vendors\ti-icons\css\themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard\vendors\base\vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'dashboard\css\style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'dashboard\images\favicon.png' %}" />
+</head>
+
+<body>
+
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <a class="nav-link" href="{% url 'admin_dashboard' %}">Back to Dashboard</a>
+
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">STUDENT DETAILS</h4>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Date of birth
+                        </th>
+                        <th>
+                          E-mail
+                        </th>
+                        <th>
+                          Phone Number
+                        </th>
+                        <th>
+                          Address
+                        </th>
+                        <th>
+                          Class Name
+                        </th>
+                        <th>
+                          Division
+                        </th>
+                        <th>
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for student in students %}
+                      <tr>
+                        <td>
+                          {{ student.full_name }}
+                        </td>
+                        <td>
+                          {{ student.date_of_birth }}
+                        </td>
+                        <td>
+                          {{ student.email }}
+                        </td>
+                        <td>
+                          {{ student.phone_number }}
+                        </td>
+                        <td>
+                          {{ student.address }}
+                        </td>
+                        <td>
+                          {{ student.class_name }}
+                        </td>
+                        <td>
+                          {{ student.division }}
+                        </td>
+                        <td>
+                          <a href="{% url 'libraryHistory_add' pk=student.pk %}">Add Library Details</a>
+
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- content-wrapper ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <script src="../../js/todolist.js"></script>
+  <!-- endinject -->
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>fee view</title>
+
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'dashboard\vendors\ti-icons\css\themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard\vendors\base\vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'dashboard\css\style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'dashboard\images\favicon.png' %}" />
+</head>
+
+<body>
+
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <a class="nav-link" href="{{ dashboard_url }}">Back to Dashboard</a>
+
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">FEE HISTORY DETAILS</h4>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>
+                          Student Name
+                        </th>
+                        <th>
+                          Fee type
+                        </th>
+                        <th>
+                          Amount
+                        </th>
+                        <th>
+                          Payment date
+                        </th>
+                        <th>
+                          Remarks
+                        </th>
+                        <th>
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for fee_history in fee_history %}
+                      <tr>
+                        <td>
+                          {{ fee_history.student }}
+                        </td>
+                        <td>
+                          {{ fee_history.fee_type }}
+                        </td>
+                        <td>
+                          {{ fee_history.amount }}
+                        </td>
+                        <td>
+                          {{ fee_history.payment_date }}
+                        </td>
+                        <td>
+                          {{ fee_history.remarks }}
+                        </td>
+                        <td>
+                          <a href="{% url 'feeHistory_edit' pk=fee_history.pk %}">Edit</a> |
+                          <!-- Delete link that triggers a form submission -->
+                          <a href="#"
+                            onclick="document.getElementById('delete-form-{{ fee_history.pk }}').submit(); return confirm('Are you sure you want to delete this user?');">Delete</a>
+
+                          <!-- Hidden form for DELETE request -->
+                          <form id="delete-form-{{ fee_history.pk }}"
+                            action="{% url 'feeHistory_delete' pk=fee_history.pk %}" method="POST"
+                            style="display:none;">
+                            {% csrf_token %}
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger btn-sm" style="display:none;">Delete</button>
+                          </form>
+
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- content-wrapper ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <script src="../../js/todolist.js"></script>
+  <!-- endinject -->
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>RoyalUI Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'dashboard\vendors\ti-icons\css\themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard\vendors\base\vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'dashboard\css\style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'dashboard\images\favicon.png' %}" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="main-panel">
+            <div class="content-wrapper">
+              <div class="row">
+                <div class="col-md-6 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Edit Student</h4>
+                      <form class="forms-sample" action="{% url 'student_edit' pk=student.pk %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <label for="full_name">Name</label>
+                          <input type="text" class="form-control" name="full_name" id="full_name"
+                            placeholder="Full name" value="{{ student.full_name }}" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="date_of_birth">Date of Birth</label>
+                          <input type="date" class="form-control" name="date_of_birth" id="date_of_birth"
+                            placeholder="dd/mm/yyyy" value="{{ student.date_of_birth|date:'Y-m-d' }}" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">E-mail</label>
+                          <input type="email" class="form-control" name="email" id="email" placeholder="E-mail"
+                            value="{{ student.email }}" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="phone_number">Phone Number</label>
+                          <input type="text" class="form-control" name="phone_number" id="phone_number"
+                            placeholder="Phone Number" value="{{ student.phone_number }}" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="address">Address</label>
+                          <input type="text" class="form-control" name="address" id="address" placeholder="Address"
+                            value="{{ student.address }}" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="class_name">Class Name</label>
+                          <select class="form-control" name="class_name" id="class_name" required>
+                            <option value="I" {% if student.class_name=="I" %}selected{% endif %}>Class I</option>
+                            <option value="II" {% if student.class_name=="II" %}selected{% endif %}>Class II</option>
+                            <option value="III" {% if student.class_name=="III" %}selected{% endif %}>Class III</option>
+                            <option value="IV" {% if student.class_name=="IV" %}selected{% endif %}>Class IV</option>
+                            <option value="V" {% if student.class_name=="V" %}selected{% endif %}>Class V</option>
+                            <option value="VI" {% if student.class_name=="VI" %}selected{% endif %}>Class VI</option>
+                            <option value="VII" {% if student.class_name=="VII" %}selected{% endif %}>Class VII</option>
+                            <option value="VIII" {% if student.class_name=="VIII" %}selected{% endif %}>Class VIII
+                            </option>
+                            <option value="IX" {% if student.class_name=="IX" %}selected{% endif %}>Class IX</option>
+                            <option value="X" {% if student.class_name=="X" %}selected{% endif %}>Class X</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="division">Division</label>
+                          <select class="form-control" name="division" id="division" required>
+                            <option value="A" {% if student.division=="A" %}selected{% endif %}>A</option>
+                            <option value="B" {% if student.division=="B" %}selected{% endif %}>B</option>
+                            <option value="C" {% if student.division=="C" %}selected{% endif %}>C</option>
+                            <option value="D" {% if student.division=="D" %}selected{% endif %}>D</option>
+                          </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary me-2">Edit</button>
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../../vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/todolist.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>
