@@ -6,7 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>RoyalUI Admin</title>
+  <title>School Management</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'dashboard\vendors\ti-icons\css\themify-icons.css' %}">
   <link rel="stylesheet" href="{% static 'dashboard\vendors\base\vendor.bundle.base.css' %}">
@@ -61,26 +61,26 @@
                         <div class="form-group">
                           <label for="class_name">Class Name</label>
                           <select class="form-control" name="class_name" id="class_name" required>
-                            <option value="I" {% if student.class_name=="I" %}selected{% endif %}>Class I</option>
-                            <option value="II" {% if student.class_name=="II" %}selected{% endif %}>Class II</option>
-                            <option value="III" {% if student.class_name=="III" %}selected{% endif %}>Class III</option>
-                            <option value="IV" {% if student.class_name=="IV" %}selected{% endif %}>Class IV</option>
-                            <option value="V" {% if student.class_name=="V" %}selected{% endif %}>Class V</option>
-                            <option value="VI" {% if student.class_name=="VI" %}selected{% endif %}>Class VI</option>
-                            <option value="VII" {% if student.class_name=="VII" %}selected{% endif %}>Class VII</option>
-                            <option value="VIII" {% if student.class_name=="VIII" %}selected{% endif %}>Class VIII
+                            <option value="I" {% if student.class_name == "I" %}selected{% endif %}>Class I</option>
+                            <option value="II" {% if student.class_name == "II" %}selected{% endif %}>Class II</option>
+                            <option value="III" {% if student.class_name == "III" %}selected{% endif %}>Class III</option>
+                            <option value="IV" {% if student.class_name == "IV" %}selected{% endif %}>Class IV</option>
+                            <option value="V" {% if student.class_name == "V" %}selected{% endif %}>Class V</option>
+                            <option value="VI" {% if student.class_name == "VI" %}selected{% endif %}>Class VI</option>
+                            <option value="VII" {% if student.class_name == "VII" %}selected{% endif %}>Class VII</option>
+                            <option value="VIII" {% if student.class_name == "VIII" %}selected{% endif %}>Class VIII
                             </option>
-                            <option value="IX" {% if student.class_name=="IX" %}selected{% endif %}>Class IX</option>
-                            <option value="X" {% if student.class_name=="X" %}selected{% endif %}>Class X</option>
+                            <option value="IX" {% if student.class_name == "IX" %}selected{% endif %}>Class IX</option>
+                            <option value="X" {% if student.class_name == "X" %}selected{% endif %}>Class X</option>
                           </select>
                         </div>
                         <div class="form-group">
                           <label for="division">Division</label>
                           <select class="form-control" name="division" id="division" required>
-                            <option value="A" {% if student.division=="A" %}selected{% endif %}>A</option>
-                            <option value="B" {% if student.division=="B" %}selected{% endif %}>B</option>
-                            <option value="C" {% if student.division=="C" %}selected{% endif %}>C</option>
-                            <option value="D" {% if student.division=="D" %}selected{% endif %}>D</option>
+                            <option value="A" {% if student.division == "A" %}selected{% endif %}>A</option>
+                            <option value="B" {% if student.division == "B" %}selected{% endif %}>B</option>
+                            <option value="C" {% if student.division == "C" %}selected{% endif %}>C</option>
+                            <option value="D" {% if student.division == "D" %}selected{% endif %}>D</option>
                           </select>
                         </div>
 

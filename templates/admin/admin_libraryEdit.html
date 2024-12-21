@@ -6,7 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>RoyalUI Admin</title>
+  <title>School Management</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'dashboard\vendors\ti-icons\css\themify-icons.css' %}">
   <link rel="stylesheet" href="{% static 'dashboard\vendors\base\vendor.bundle.base.css' %}">
@@ -57,9 +57,9 @@
                         <div class="form-group">
                           <label for="status">status</label>
                           <select class="form-control" name="status" id="status" required>
-                            <option value="Borrowed" {% if student.status=="borrowed" %}selected{% endif %}>Borrowed
+                            <option value="Borrowed" {% if library_history.status == "borrowed" %}selected{% endif %}>Borrowed
                             </option>
-                            <option value="returned" {% if student.status=="returned" %}selected{% endif %}>Returned
+                            <option value="returned" {% if library_history.status == "returned" %}selected{% endif %}>Returned
                             </option>
                           </select>
                         </div>
