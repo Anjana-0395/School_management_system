@@ -20,11 +20,11 @@ Can review library records.
 #### Librarian
 View-only access to library history and student details.
 ## Technology Stack
-Backend Framework: Django Rest Framework, Django
+**Backend Framework:** Django Rest Framework, Django
 
-Frontend Framework: Django templates
+**Frontend Framework:** Django templates
 
-Database: SQLite
+**Database:** SQLite
 ## Installation and Setup
 #### Prerequisites
 Python 3.6 or higher
